@@ -16,7 +16,10 @@ const Main = () => {
       <Pricing />
 
       {/* Contact */}
-      <Contact />
+      <div id="contact">
+        {" "}
+        <Contact />{" "}
+      </div>
     </section>
   );
 };

@@ -2,7 +2,6 @@
 //   isLoggedIn : boolean;
 // }
 
-import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Header = () => {
@@ -20,18 +19,12 @@ const Header = () => {
         <button className="bg-pale px-2 py-1 rounded-lg hover:bg-pale/70 text-darkGreen hover:text-mediumGreen">
           Login
         </button>
-        <NavLink
-          to="/about"
-          className={`px-2 py-1 text-[#fff] hover:text-pale`}
-        >
+        <a href="/about" className={`px-2 py-1 text-[#fff] hover:text-pale`}>
           About
-        </NavLink>
-        <NavLink
-          to="/contact"
-          className="px-2 py-1 text-[#fff] hover:text-pale"
-        >
+        </a>
+        <a href="#contact" className="px-2 py-1 text-[#fff] hover:text-pale">
           Contact us
-        </NavLink>
+        </a>
       </div>
     </motion.header>
   );
