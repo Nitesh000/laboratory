@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
+const verifyToken = require("./middleware/verifyToken");
 const app = express();
 require("dotenv").config();
 
@@ -24,7 +25,7 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 
-app.use("/login", require("./routes/loginRoute"));
+app.use("/login", verifyToken, require("./routes/loginRoute"));
 app.use("/signin", require("./routes/signInRoute"));
 
 app.listen(port, () => {

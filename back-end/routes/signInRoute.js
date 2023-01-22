@@ -1,11 +1,10 @@
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const UserModal = require("../modal/user.modal");
-const saltRounds = 10;
 
 router.post("/", async (req, res) => {
   const { name, phone, email, password, address } = req.body;
-  const hashPassword = bcrypt.hashSync(password, saltRounds);
+  const hashPassword = bcrypt.hashSync(password, process.env.SALTROUNDS);
   let newUser = new UserModal({
     name,
     email,
