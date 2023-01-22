@@ -34,7 +34,6 @@ const Login = () => {
           />
         </div>
       </div>
-      <Footer />
     </React.Fragment>
   );
 };

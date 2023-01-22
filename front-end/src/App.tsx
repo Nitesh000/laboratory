@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Login from "./pages/Login";
 
@@ -9,6 +10,7 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="login" element={<Login />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import Contact from "./Contact";
-import Footer from "./Footer";
 import Header from "./Header";
 import Hero from "./Hero";
 import Pricing from "./Pricing";
@@ -26,7 +25,6 @@ const Main = () => {
           <Contact />{" "}
         </div>
       </section>
-      <Footer />
     </React.Fragment>
   );
 };
