@@ -27,6 +27,7 @@ app.use(cookieParser());
 
 app.use("/login", verifyToken, require("./routes/loginRoute"));
 app.use("/signin", require("./routes/signInRoute"));
+app.use("/pricing", require("./routes/pricingRoute"));
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

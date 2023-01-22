@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Login from "./pages/Login";
+import PricingPagae from "./pages/PricingPage";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="login" element={<Login />} />
+        <Route path="pricing" element={<PricingPagae />} />
       </Routes>
       <Footer />
     </div>
