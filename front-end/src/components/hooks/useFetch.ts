@@ -9,8 +9,10 @@ const useFetch = (url: URL) => {
       setData(json);
     };
     fetchData();
+    return () => {
+      setData(null);
+    };
   }, [url]);
-
   return data;
 };
 export default useFetch;
