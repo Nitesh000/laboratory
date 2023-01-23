@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
-import useFetch from "../components/hooks/useFetch";
 
 const PricingPagae = () => {
-  const pricingUrl = new URL("http://localhost:3000/pricing");
-  const data = useFetch(pricingUrl);
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    const dataFetch = async () => {
+      const data = await fetch("http://localhost:3000/pricing");
+      const json = await data.json();
+      setData(json);
+    };
+    dataFetch();
+    return () => {
+      setData(null);
+    };
+  }, []);
   console.log(data);
   return (
     <React.Fragment>
