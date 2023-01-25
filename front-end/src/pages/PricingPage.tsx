@@ -30,7 +30,7 @@ const PricingPagae = () => {
   return (
     <React.Fragment>
       <Header location="Pricing" />
-      <section className="max-w-7xl h-screen mb-2">
+      <section className="max-w-7xl mb-2">
         <div className="flex justify-center items-center h-28">
           <h3 className="tracking-wider text-darkGreen text-2xl hover:underline hover:decoration-darkGreen hover:cursor-pointer">
             Pricing
