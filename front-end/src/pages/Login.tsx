@@ -27,7 +27,7 @@ const Login = () => {
             type="text"
             placeholder="Username"
             value={userName}
-            onChange={() => setUserName(userName)}
+            onChange={(e) => setUserName(e.target.value)}
           />
           <InputField
             label="Password"
@@ -35,7 +35,7 @@ const Login = () => {
             type="password"
             placeholder="Password"
             value={password}
-            onChange={() => setPassword(password)}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <button className="bg-darkGreen text-white font-bold my-4 py-2 px-4 rounded-md mt-4">
             Login

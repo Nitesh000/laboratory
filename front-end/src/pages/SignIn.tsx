@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const SignIn = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
-  const [phone, setPhone] = useState();
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const alreadyHaveHandler = () => {
     navigate("/login");
@@ -26,7 +26,7 @@ const SignIn = () => {
             type="text"
             placeholder="Username"
             value={userName}
-            onChange={() => setUserName(userName)}
+            onChange={(e) => setUserName(e.target.value)}
           />
           <InputField
             label="Phone"
@@ -34,7 +34,7 @@ const SignIn = () => {
             type="number"
             placeholder="Phone No."
             value={phone}
-            onChange={() => setPhone(phone)}
+            onChange={(e) => setPhone(e.target.value)}
           />
           <InputField
             label="Password"
@@ -42,7 +42,7 @@ const SignIn = () => {
             type="password"
             placeholder="Password"
             value={password}
-            onChange={() => setPassword(password)}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <button className="bg-darkGreen text-white font-bold my-4 py-2 px-4 rounded-md mt-4">
             SignIn
