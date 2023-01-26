@@ -36,37 +36,39 @@ const PricingPagae = () => {
             Pricing
           </h3>
         </div>
-        {data.map((item: PricingType) => {
-          return (
-            <div key={item._id}>
-              <h1 className="tracking-wider text-darkGreen text-xl hover:underline hover:decoration-darkGreen hover:cursor-pointer">
-                {item.name}
-              </h1>
-              <table className="w-1/2 inline text-sm text-left text-gray-500 ">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-50">
-                  <tr>
-                    <th scope="col" className="px-6 py-3">
-                      Name of the test
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                      Price
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {item.tests.map((test: TestsTypes, i) => {
-                    return (
-                      <tr key={i} className="bg-white border-b ">
-                        <td className="px-6 py-4">{test.test}</td>
-                        <td className="px-6 py-4">{test.price}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          );
-        })}
+        <div className="flex ">
+          {data.map((item: PricingType) => {
+            return (
+              <div key={item._id} className="px-10">
+                <h1 className="tracking-wider text-darkGreen text-xl text-center mb-2 hover:underline hover:decoration-pale hover:cursor-pointer">
+                  {item.name}
+                </h1>
+                <table className="w-1/2 inline text-sm text-left text-gray-500 rounded-2xl">
+                  <thead className="text-xs text-gray-700 uppercase bg-darkGreen/40">
+                    <tr>
+                      <th scope="col" className="px-6 py-3">
+                        Name of the test
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Price
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {item.tests.map((test: TestsTypes, i) => {
+                      return (
+                        <tr key={i} className="bg-pale border-b ">
+                          <td className="px-6 py-4">{test.test}</td>
+                          <td className="px-6 py-4">{`₹${test.price}`}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            );
+          })}
+        </div>
       </section>
     </React.Fragment>
   );
