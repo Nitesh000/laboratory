@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Login from "./pages/Login";
 import PricingPagae from "./pages/PricingPage";
+import SignIn from "./pages/SignIn";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="login" element={<Login />} />
+        <Route path="signin" element={<SignIn />} />
         <Route path="pricing" element={<PricingPagae />} />
       </Routes>
       <Footer />

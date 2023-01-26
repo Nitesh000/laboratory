@@ -7,7 +7,11 @@ import { useNavigate } from "react-router-dom";
 const Header = ({ location }: HeaderProp) => {
   const navigate = useNavigate();
   const loginBtnHandler = () => {
-    navigate("/login");
+    if (location == "login") {
+      navigate("/signin");
+    } else {
+      navigate("/login");
+    }
   };
   return (
     <motion.header
