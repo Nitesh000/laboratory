@@ -33,7 +33,7 @@ const Header = ({ location }: HeaderProp) => {
         <a href="/about" className={`px-2 py-1 text-[#fff] hover:text-pale`}>
           About
         </a>
-        <a href="#contact" className="px-2 py-1 text-[#fff] hover:text-pale">
+        <a href="/#contact" className="px-2 py-1 text-[#fff] hover:text-pale">
           Contact us
         </a>
       </div>
