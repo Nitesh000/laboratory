@@ -8,7 +8,5 @@ module.exports = verifyToken = async (req, res, next) => {
   if (!_id) return next();
   const user = await UserModal.findOne({ _id });
   if (!user) return next();
-  res
-    .cookie("token", token, { httpOnly: true })
-    .send({ message: `Welcome ${user.name}` });
+  return res.redirect(`/usr/${_id}`);
 };

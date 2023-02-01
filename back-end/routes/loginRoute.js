@@ -5,7 +5,6 @@ const jwt = require("jsonwebtoken");
 
 router.post("/", async (req, res) => {
   const { username, password } = req.body;
-  console.log(req.cookies);
   const user = await UserModal.findOne({ email: username });
   if (!user)
     return res.send({
@@ -19,8 +18,9 @@ router.post("/", async (req, res) => {
   const token = jwt.sign({ _id: user._id }, process.env.PRIVATEKEY, {
     expiresIn: "1h",
   });
-  res.cookie("token", token, { httpOnly: true });
-  res.send({ message: `welcome ${user.name}` });
+  res
+    .cookie("token", token, { httpOnly: true })
+    .send({ redirect: `${user._id}` });
 });
 
 module.exports = router;
