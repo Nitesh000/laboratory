@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import PricingPagae from "./pages/PricingPage";
 import SignIn from "./pages/SignIn";
+import User from "./pages/User";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="signin" element={<SignIn />} />
         <Route path="pricing" element={<PricingPagae />} />
         <Route path="about" element={<About />} />
+        <Route path="user/:userID" element={<User />} />
       </Routes>
       <Footer />
     </div>

@@ -12,6 +12,27 @@ const Login = () => {
   const cerateHereHandler = () => {
     navigate("/signin");
   };
+
+  const loginClickHandler = async () => {
+    const userData = new FormData();
+    userData.append("username", userName);
+    userData.append("password", password);
+
+    const respose = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    });
+    const data = await respose.json();
+    if (data.redirect) {
+      navigate(`user/${data.redirect}`);
+    } else {
+      alert(data.message);
+    }
+  };
+
   return (
     <React.Fragment>
       {" "}
@@ -37,7 +58,10 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="bg-darkGreen text-white font-bold my-4 py-2 px-4 rounded-md mt-4">
+          <button
+            className="bg-darkGreen text-white font-bold my-4 py-2 px-4 rounded-md mt-4"
+            onClick={loginClickHandler}
+          >
             Login
           </button>
           <p className="mb-4">

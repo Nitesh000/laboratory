@@ -13,6 +13,7 @@ const Header = ({ location }: HeaderProp) => {
       navigate("/login");
     }
   };
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -28,13 +29,19 @@ const Header = ({ location }: HeaderProp) => {
           onClick={loginBtnHandler}
           className="bg-pale px-2 py-1 rounded-lg hover:bg-pale/70 text-darkGreen hover:text-mediumGreen"
         >
-          {`${location == "login" ? "Sign Up" : "Login"}`}
+          {`${
+            location != "user"
+              ? location == "login"
+                ? "Sign Up"
+                : "Login"
+              : "LogOut"
+          }`}
         </button>
         <a href="/about" className={`px-2 py-1 text-[#fff] hover:text-pale`}>
-          About
+          {`${location == "user" ? "Test" : "About"}`}
         </a>
         <a href="/#contact" className="px-2 py-1 text-[#fff] hover:text-pale">
-          Contact us
+          {`${location == "user" ? "Reports" : "Contact us"}`}
         </a>
       </div>
     </motion.header>
